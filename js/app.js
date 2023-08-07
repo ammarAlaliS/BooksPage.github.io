@@ -1,41 +1,56 @@
+const booksBox = document.getElementById('booksBox');
+const data = JSON.parse(localStorage.getItem('booksData')) || [];
+
 class Books {
   constructor(name, autor) {
     this.title = name;
     this.autor = autor;
   }
 
-  addNewBook(books) {
-    const booksBox = document.getElementById('booksBox');
-    const element = document.createElement('div');
-    element.innerHTML = `
-        <h2 class="bookTitle">Title: ${books.title}</h2>
-        <h3 class="bookAutor">Autor: ${books.autor}</h3>
-        <button class="bookButton">Delete</button>
+  static addNewBook(booksData) {
+    return booksData.map((book, index) => {
+      const { title, autor } = book;
+      return `
+        <div id="book-${index}">
+            <h2 class="bookTitle">Title: ${title}</h2>
+            <h3 class="bookAutor">Autor: ${autor}</h3>
+            <button class="bookButton" data-index="${index}">Delete</button>
+        </div>
       `;
-    booksBox.appendChild(element);
-    
+    });
   }
 
-//   removeBook() {
-//     // Lógica para eliminar un libro
-//   }
-
-//   showMessage() {
-//     // Lógica para mostrar un mensaje
-//   }
+  static removeBook(index) {
+    const bookDiv = document.getElementById(`book-${index}`);
+    if (bookDiv) {
+      bookDiv.remove();
+      data.splice(index, 1);
+      localStorage.setItem('booksData', JSON.stringify(data));
+    }
+  }
 }
-
-// DOM MANIPULATION
 
 document.getElementById('booksForm').addEventListener('submit', (e) => {
   const name = document.getElementById('name').value;
   const autor = document.getElementById('autor').value;
 
-  console.log(name, autor);
+  const book = new Books(name, autor);
+  data.push(book);
 
-  const book = new Books(name, autor); // Cambiar el nombre de la variable a book
+  localStorage.setItem('booksData', JSON.stringify(data));
 
-  book.addNewBook(book); // Agregar el nuevo libro al DOM
+  const booksHTML = Books.addNewBook(data);
+  booksBox.innerHTML = booksHTML.join('');
 
   e.preventDefault();
+});
+
+const booksHTML = Books.addNewBook(data);
+booksBox.innerHTML = booksHTML.join('');
+
+booksBox.addEventListener('click', (e) => {
+  if (e.target.classList.contains('bookButton')) {
+    const index = parseInt(e.target.getAttribute('data-index'), 10);
+    Books.removeBook(index);
+  }
 });
