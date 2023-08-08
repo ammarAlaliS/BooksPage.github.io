@@ -20,6 +20,7 @@ class Books {
     });
   }
 
+  // Creating functionality to remove books
   static removeBook(index) {
     const bookDiv = document.getElementById(`book-${index}`);
     if (bookDiv) {
@@ -47,6 +48,8 @@ document.getElementById('booksForm').addEventListener('submit', (e) => {
 
 const booksHTML = Books.addNewBook(data);
 booksBox.innerHTML = booksHTML.join('');
+
+// Creating addEventListener functionality
 
 booksBox.addEventListener('click', (e) => {
   if (e.target.classList.contains('bookButton')) {
