@@ -41,7 +41,7 @@ Event Delegation: To efficiently handle the "Delete" button clicks, the code emp
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
+### Tech Stack <a name="tech-stack">HTML, CSS, JS</a>
 
 <details>
 <summary>Github</summary>
