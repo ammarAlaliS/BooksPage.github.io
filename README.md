@@ -41,7 +41,7 @@ Event Delegation: To efficiently handle the "Delete" button clicks, the code emp
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
+### Tech Stack <a name="tech-stack">HTML, CSS, JS</a>
 
 <details>
 <summary>Github</summary>
@@ -77,6 +77,8 @@ Event Delegation: To efficiently handle the "Delete" button clicks, the code emp
 - **Add linter to resolve some hmtl and css issue**
 - **Add the html**
 - **Add Css to styles**
+- **SPA**
+
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
