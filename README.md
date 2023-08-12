@@ -77,6 +77,7 @@ Event Delegation: To efficiently handle the "Delete" button clicks, the code emp
 - **Add linter to resolve some hmtl and css issue**
 - **Add the html**
 - **Add Css to styles**
+- **SPA**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
