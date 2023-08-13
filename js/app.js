@@ -1,7 +1,6 @@
 const booksBox = document.querySelector('.books');
 const lists = document.querySelector('.list');
 const booksForm = document.getElementById('booksForm');
-
 let data = JSON.parse(localStorage.getItem('booksData')) || [];
 
 class Books {
@@ -56,10 +55,8 @@ document.getElementById('booksForm').addEventListener('submit', (e) => {
 
   const name = document.getElementById('name').value;
   const autor = document.getElementById('autor').value;
-
   const book = new Books(name, autor);
   data.push(book);
-
   localStorage.setItem('booksData', JSON.stringify(data));
 
   const booksHTML = Books.addNewBook(data);
