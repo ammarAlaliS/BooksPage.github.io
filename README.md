@@ -80,6 +80,7 @@ Event Delegation: To efficiently handle the "Delete" button clicks, the code emp
 - **SPA**
 
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
